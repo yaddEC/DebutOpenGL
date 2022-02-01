@@ -4,6 +4,17 @@
 
 #include "gl.hpp"
 
+
+// Dans le gl.cpp
+PFNGLGENTEXTURESPROC glGenTextures = nullptr;
+PFNGLBINDTEXTUREPROC glBindTexture = nullptr;
+PFNGLTEXIMAGE2DPROC glTexImage2D = nullptr;
+PFNGLTEXSUBIMAGE2DPROC glTexSubImage2D = nullptr;
+PFNGLTEXPARAMETERIPROC glTexParameteri = nullptr;
+PFNGLTEXCOORD2FPROC glTexCoord2f = nullptr;
+PFNGLDELETETEXTURESPROC glDeleteTextures = nullptr;
+PFNGLNORMAL3FPROC glNormal3f = nullptr;
+PFNGLLIGHTFVPROC glLightfv = nullptr;
 PFNGLGETSTRINGPROC glGetString = nullptr;
 PFNGLCLEARPROC glClear = nullptr;
 PFNGLCLEARCOLORPROC glClearColor = nullptr;
@@ -28,6 +39,8 @@ PFNGLPOLYGONMODEPROC glPolygonMode = nullptr;
 void loadGLFunctions()
 {
     // Assign function pointers
+    glLightfv = (PFNGLLIGHTFVPROC) glfwGetProcAddress("glLightfv");
+    glNormal3f = (PFNGLNORMAL3FPROC )glfwGetProcAddress("glNormal3f");
     glGetString = (PFNGLGETSTRINGPROC)glfwGetProcAddress("glGetString");
     glClear = (PFNGLCLEARPROC)glfwGetProcAddress("glClear");
     glClearColor = (PFNGLCLEARCOLORPROC)glfwGetProcAddress("glClearColor");
@@ -48,4 +61,11 @@ void loadGLFunctions()
     glPopMatrix = (PFNGLPOPMATRIXPROC)glfwGetProcAddress("glPopMatrix");
     glOrtho = (PFNGLORTHOPROC)glfwGetProcAddress("glOrtho");
     glPolygonMode = (PFNGLPOLYGONMODEPROC)glfwGetProcAddress("glPolygonMode");
+    glGenTextures = (PFNGLGENTEXTURESPROC)glfwGetProcAddress("glGenTextures");
+    glBindTexture = (PFNGLBINDTEXTUREPROC)glfwGetProcAddress("g lBindTexture");
+    glTexImage2D = (PFNGLTEXIMAGE2DPROC)glfwGetProcAddress("glTexImage2D");
+    glTexSubImage2D = (PFNGLTEXSUBIMAGE2DPROC)glfwGetProcAddress("glTexSubImage2D");
+    glTexParameteri = (PFNGLTEXPARAMETERIPROC)glfwGetProcAddress("glTexParameteri");
+    glTexCoord2f = (PFNGLTEXCOORD2FPROC)glfwGetProcAddress("glTexCoord2f");
+    glDeleteTextures = (PFNGLDELETETEXTURESPROC)glfwGetProcAddress("glDeleteTextures");
 }

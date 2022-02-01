@@ -1,6 +1,6 @@
 TARGET?=$(shell $(CXX) -dumpmachine)
 
-BIN=load_funcs
+BIN=Maze
 CXXFLAGS=-Wall -Wno-unused-variable -O0 -g
 CFLAGS=$(CXXFLAGS)
 CPPFLAGS=-Iexternals/include -MMD

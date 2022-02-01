@@ -7,6 +7,15 @@
 #include <GL/glu.h>
 
 // Variables holding gl function pointers
+extern PFNGLLIGHTFVPROC glLightfv;
+extern PFNGLNORMAL3FPROC glNormal3f;
+extern PFNGLGENTEXTURESPROC glGenTextures;
+extern PFNGLBINDTEXTUREPROC glBindTexture;
+extern PFNGLTEXIMAGE2DPROC glTexImage2D;
+extern PFNGLTEXSUBIMAGE2DPROC glTexSubImage2D;
+extern PFNGLTEXPARAMETERIPROC glTexParameteri;
+extern PFNGLTEXCOORD2FPROC glTexCoord2f;
+extern PFNGLDELETETEXTURESPROC glDeleteTextures;
 extern PFNGLGETSTRINGPROC glGetString;
 extern PFNGLCLEARPROC glClear;
 extern PFNGLCLEARCOLORPROC glClearColor;
